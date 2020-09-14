@@ -32,11 +32,6 @@ function handleIPC() {
 
     notification.show();
 
-    setTimeout(() => {
-      notification.close();
-      e.sender.send('automatic-closer');
-    }, 2 * 1000);
-
     notification.on('action', () => resolve({ event: 'action' }));
     notification.on('close', () => resolve({ event: 'close' }));
 

@@ -90,7 +90,6 @@ const workTimer = new Timer({
   onstop: () => state.change(state.types.working),
   onend() {
     const curType = state.getCurType();
-    console.log(curType);
 
     if (curType === state.types.working.value) {
       state.change(state.types.worked);
