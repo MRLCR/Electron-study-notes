@@ -1,8 +1,8 @@
-const {app, BrowserWindow, ipcMain, Notification} = require('electron');
+const { app, BrowserWindow, ipcMain, Notification } = require('electron');
 
-let MAIN_WIN = null;
+let mainWindow = null;
 
-function createWindow(url = './index.html') {
+function createWindow(url = './src/index.html') {
   const win = new BrowserWindow({
     width: 600,
     height: 600,
@@ -32,21 +32,19 @@ function handleIPC() {
 
     notification.show();
 
-    notification.on('action', () => {
-      resolve({
-        event: 'action',
-      });
-    });
+    setTimeout(() => {
+      notification.close();
+      e.sender.send('automatic-closer');
+    }, 2 * 1000);
 
-    notification.on('close', () => {
-      resolve({
-        event: 'close',
-      });
-    });
+    notification.on('action', () => resolve({ event: 'action' }));
+    notification.on('close', () => resolve({ event: 'close' }));
+
   }))
 }
 
-app.whenReady().then(() => {
-  MAIN_WIN = createWindow(); // 防止主窗口被垃圾回收
-  handleIPC();
-});
+app.whenReady()
+  .then(() => {
+    mainWindow = createWindow();
+    handleIPC();
+  });

@@ -2,13 +2,14 @@
   "name": "clock",
   "version": "1.0.0",
   "description": "electron 练习之番茄时钟",
-  "main": "main.js",
+  "main": "src/main.js",
   "scripts": {
     "start": "electron ."
   },
   "author": "Churan.lin",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^14.10.0",
     "electron": "^8.2.3"
   },
   "dependencies": {

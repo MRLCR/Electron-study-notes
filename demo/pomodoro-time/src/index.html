@@ -1,0 +1,64 @@
+<html>
+
+<head>
+  <style>
+    * {
+      margin: 0;
+      text-align: center;
+    }
+
+    #app {
+      padding: 20px;
+    }
+
+    .timer {
+      width: 400px;
+      padding: 10px;
+      margin: auto;
+      box-sizing: border-box;
+    }
+
+    .row {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .btn {
+      height: 30px;
+      padding: 0 7px;
+      line-height: 30px;
+      border: 1px solid #F44336;
+      border-radius: 6px;
+      outline: none;
+      box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+      background-color: #f44336;
+      font-family: Avenir, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+      font-size: 12px;
+      color: #fff;
+    }
+
+    .log-btn {
+      margin-left: 20px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div class="timer" id="timer-container"></div>
+    <div class="row">
+      <button class="btn" id="switch-button"></button>
+      <button class="btn log-btn" id="log-button">打印记录</button>
+    </div>
+    <p class="log" id="log"></p>
+  </div>
+  <script>
+    require('./renderer.js');
+  </script>
+</body>
+
+</html>
