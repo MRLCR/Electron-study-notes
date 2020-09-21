@@ -1,0 +1,24 @@
+{
+  "name": "remote-control",
+  "version": "1.0.0",
+  "description": "Just a electron demo",
+  "main": "app/main/index.js",
+  "scripts": {
+    "start": "concurrently \"npm run start:render\" \"wait-on http://localhost:8080 && npm run start:main\"",
+    "start:main": "electron .",
+    "start:render": "cd app/renderer/ && npm run dev"
+  },
+  "keywords": [],
+  "author": "linchuran",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^14.11.1",
+    "electron-is-dev": "^1.2.0"
+  },
+  "dependencies": {
+    "concurrently": "^5.3.0",
+    "electron": "^10.1.2",
+    "electron-rebuild": "^2.0.3",
+    "wait-on": "^5.2.0"
+  }
+}
