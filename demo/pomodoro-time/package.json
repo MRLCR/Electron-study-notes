@@ -6,7 +6,7 @@
   "scripts": {
     "start": "electron ."
   },
-  "author": "Churan.lin",
+  "author": "linchuran",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^14.10.0",
